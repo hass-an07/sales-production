@@ -56,7 +56,7 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="worker_code">Code</label>
-                                    <input type="text" value="{{ old('worker_code') }}" name="worker_code" id="worker_code"
+                                    <input type="text" value="{{ $workerCode }}" readonly name="worker_code" id="worker_code"
                                         class="form-control" placeholder="Code">
                                     <span class="text-danger">
                                         @error('worker_code')
@@ -91,9 +91,9 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label for="age">Age</label>
+                                    <label for="age">Date of birth</label>
                                     <input type="number" value="{{ old('age') }}" name="age" id="age"
-                                        class="form-control" placeholder="age">
+                                        class="form-control" placeholder="Date of birth">
                                     <span class="text-danger">
                                         @error('age')
                                             {{ $message }}

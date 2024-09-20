@@ -6,6 +6,7 @@ use App\Models\Material;
 use App\Http\Requests\StoreMaterialRequest;
 use App\Http\Requests\UpdateMaterialRequest;
 use App\Models\MaterialType;
+use App\Models\WeightType;
 use Illuminate\Support\Facades\Validator;
 
 class MaterialController extends Controller
@@ -16,8 +17,9 @@ class MaterialController extends Controller
     public function index()
     {
         $materialType = MaterialType::all();
+        $weightTypes = WeightType::all();
         $material = Material::with('materialType')->get();
-        return view('Material.list',compact('materialType','material'));
+        return view('Material.list',compact('materialType','material','weightTypes'));
     }
 
     /**
@@ -65,7 +67,8 @@ class MaterialController extends Controller
     public function edit(Material $material)
     {
         $materialType = MaterialType::all();
-        return view('Material.edit',compact('material','materialType'));
+        $weightTypes = WeightType::all();
+        return view('Material.edit',compact('material','materialType','weightTypes'));
     }
 
     /**

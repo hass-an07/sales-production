@@ -46,8 +46,8 @@
                             <tr>
                                 <th width="60">ID</th>
                                 <th>Company Name</th>
-                                <th>Owner Name</th>
-                                <th>Address</th>
+                                {{-- <th>Owner Name</th> --}}
+                                {{-- <th>Address</th> --}}
                                 <th width="100">Action</th>
                             </tr>
                         </thead>
@@ -57,8 +57,8 @@
                                     <tr>
                                         <td>{{ $item->id }}</td>
                                         <td>{{ $item->company_name }}</td>
-                                        <td>{{ $item->owner_name }}</td>
-                                        <td>{{ $item->address }}</td>
+                                        {{-- <td>{{ $item->owner_name }}</td> --}}
+                                        {{-- <td>{{ $item->address }}</td> --}}
 
                                         <td class="d-flex">
                                             <!-- Edit Button -->

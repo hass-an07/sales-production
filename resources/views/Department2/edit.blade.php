@@ -17,7 +17,7 @@
 <!-- Main content -->
 <section class="content">
     <div class="container-fluid">
-        <form action="{{ route('department2.update', $departmentTwo->id) }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('department2.update',$departmentTwo->id) }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 

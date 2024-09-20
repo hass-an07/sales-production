@@ -39,7 +39,7 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        {{-- <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="owner_name">Owner Name</label>
                                 <input type="text" value="{{ $company->owner_name }}" name="owner_name" id="owner_name"
@@ -62,7 +62,7 @@
                                     @enderror
                                 </span>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

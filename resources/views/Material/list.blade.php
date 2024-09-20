@@ -43,11 +43,17 @@
                     </div>
                     <div class="card-title col-6">
                         <div class="mb-3">
-                            <label for="material">Material</label>
-                            <input type="text" value="{{ old('material') }}" name="material"
-                                id="material" class="form-control" placeholder="Material Name">
+                            <label for="unit">Weight Type</label>
+                            <select name="unit" id="unit" class="form-control">
+                                <option value="">--select--</option>
+                                @foreach ($weightTypes as $weightType)
+                                <option value="{{$weightType->weight_type}}">
+                                    {{ $weightType->weight_type }}
+                                </option>
+                                @endforeach
+                            </select>
                             <span class="text-danger">
-                                @error('material')
+                                @error('unit')
                                     {{ $message }}
                                 @enderror
                             </span>
@@ -55,11 +61,11 @@
                     </div>
                     <div class="card-title col-6">
                         <div class="mb-3">
-                            <label for="unit">Units</label>
-                            <input type="text" value="{{ old('unit') }}" name="unit"
-                                id="unit" class="form-control" placeholder="Material Name">
+                            <label for="material">Material</label>
+                            <input type="text" value="{{ old('material') }}" name="material"
+                                id="material" class="form-control" placeholder="Material Name">
                             <span class="text-danger">
-                                @error('unit')
+                                @error('material')
                                     {{ $message }}
                                 @enderror
                             </span>

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,7 +22,7 @@
                 <a href="#" class="h3">Administrative Panel</a>
             </div>
             <div class="card-body">
-                <p class="login-box-msg">Register Here</p>
+                <p class="login-box-msg">Add User Here</p>
                 <form action="{{ route('account.processregister') }}" method="POST">
                     @csrf
                     <div class="input-group mb-3">
@@ -75,6 +74,21 @@
                     @error('password')
                     <p class="invalid-feedback">{{ $message }}</p>
                     @enderror
+                    <div class="input-group mb-3">
+                       <select name="role[]" id="" class="form-control" multiple>
+                        @foreach ($roles as $role)
+                            <option value="{{$role->name}}">{{$role->name}}</option>
+                        @endforeach
+                       </select>
+                        {{-- <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div> --}}
+                    </div>
+                    @error('password')
+                    <p class="invalid-feedback">{{ $message }}</p>
+                    @enderror
                     <div class="row">
                         <!-- <div class="col-8">
 					  			<div class="icheck-primary">
@@ -86,13 +100,13 @@
 							</div> -->
                         <!-- /.col -->
                         <div class="col-4">
-                            <button type="submit" class="btn btn-primary btn-block">Register</button>
+                            <button type="submit" class="btn btn-primary btn-block">Add User</button>
                         </div>
                         <!-- /.col -->
                     </div>
                 </form>
                 <p class="mb-1 mt-3">
-                    <a href="forgot-password.html">I forgot my password</a>
+                    {{-- <a href="forgot-password.html">I forgot my password</a> --}}
                 </p>
             </div>
             <!-- /.card-body -->

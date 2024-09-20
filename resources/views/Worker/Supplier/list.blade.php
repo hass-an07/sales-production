@@ -23,8 +23,11 @@
             <form action="{{route("worker.index")}}" method="GET">
                 <div class="card-header">
                 @include('mesage')
-                <div class="card-title">
+                {{-- <div class="card-title">
                     <button type="button" onclick="window.location.href='{{route('worker.index')}}'" class="btn btn-primary">Reset</button>
+                </div> --}}
+                <div class="card-title">
+                    <button type="button" onclick="window.location.href='{{route('print')}}'" class="btn btn-primary">view</button>
                 </div>
                     {{-- <div class="card-tools">
                         <div class="input-group input-group" style="width: 250px;">

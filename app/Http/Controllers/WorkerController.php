@@ -24,10 +24,19 @@ class WorkerController extends Controller
      * Show the form for creating a new resource.
      */
     public function create()
-    {
-        $departments = Department::all();
-        return view('Worker.Supplier.create',compact('departments'));
-    }
+{
+    $departments = Department::all();
+
+    // Generate the worker code based on the last worker's ID
+    $lastWorker = Worker::latest()->first();
+    $serialNumber = $lastWorker ? $lastWorker->id + 1 : 1;
+
+    // Format the worker code as lf-001, lf-002, etc.
+    $workerCode = 'LF-' . str_pad($serialNumber, 3, '0', STR_PAD_LEFT);
+
+    return view('Worker.Supplier.create', compact('departments', 'workerCode'));
+}
+
 
     /**
      * Store a newly created resource in storage.
@@ -109,5 +118,11 @@ class WorkerController extends Controller
     {
         $worker->delete();
         return redirect()->back()->with('success','Worker deleted successfully');
+    }
+
+    public function print()
+    {
+        $worker = Worker::all();
+        return view('Worker.Supplier.print', compact('worker'));
     }
 }
